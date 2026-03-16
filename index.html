@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asare ♡ Acquaye Wedding Celebration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --royal-blue: #4169E1;
+            --royal-blue-dark: #1E3A8A;
+            --royal-blue-light: #6B8CFF;
+            --gold: #FFD700;
+            --gold-dark: #B8860B;
+            --gold-light: #FFF0B5;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --gradient: linear-gradient(135deg, var(--royal-blue) 0%, var(--royal-blue-dark) 100%);
+            --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            --gradient-soft: linear-gradient(135deg, rgba(65,105,225,0.05) 0%, rgba(255,215,0,0.05) 100%);
+            --shadow-sm: 0 5px 15px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(65,105,225,0.15);
+            --shadow-lg: 0 20px 40px rgba(65,105,225,0.2);
+            --shadow-gold: 0 10px 30px rgba(255,215,0,0.2);
+            --border-radius: 24px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--royal-blue-dark), var(--royal-blue));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background with Gold Sparkles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,215,0,0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255,215,0,0.1) 0%, transparent 30%),
+                repeating-linear-gradient(45deg, rgba(255,215,0,0.05) 0px, rgba(255,215,0,0.05) 2px, transparent 2px, transparent 10px);
+            z-index: -1;
+        }
+
+        /* Floating Gold Hearts */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255,215,0,0.15);
+            animation: floatHeart 15s infinite linear;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Main Card */
+        .wedding-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg), 0 0 0 3px var(--gold);
+            position: relative;
+        }
+
+        /* Decorative Gold Border */
+        .wedding-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid var(--gold);
+            border-radius: calc(var(--border-radius) - 10px);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        /* Header Section */
+        .header {
+            background: var(--gradient);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        /* Decorative Gold Elements */
+        .header::before {
+            content: '♡';
+            position: absolute;
+            top: -50px;
+            right: -20px;
+            font-size: 15rem;
+            color: rgba(255,215,0,0.15);
+            transform: rotate(15deg);
+            font-family: serif;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--royal-blue-light), var(--gold), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .flower-decoration {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            font-size: 2rem;
+            color: rgba(255,215,0,0.2);
+            transform: rotate(-15deg);
+        }
+
+        .flower-decoration-right {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgba(255,215,0,0.2);
+            transform: rotate(15deg);
+        }
+
+        .couple-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 4px;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .couple-names span {
+            display: inline-block;
+            margin: 0 1rem;
+            font-size: 3rem;
+            color: var(--white);
+            vertical-align: middle;
+        }
+
+        .wedding-subtitle {
+            font-size: 1.2rem;
+            color: var(--white);
+            opacity: 0.9;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .date-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--royal-blue-dark);
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-gold);
+            position: relative;
+            z-index: 2;
+            border: 2px solid var(--white);
+        }
+
+        .date-badge i {
+            margin: 0 0.5rem;
+            color: var(--royal-blue-dark);
+        }
+
+        /* Main Content */
+        .content {
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 2;
+            background: var(--white);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: var(--royal-blue-dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::before,
+        .section-title h2::after {
+            content: '♡';
+            color: var(--gold);
+            font-size: 2rem;
+            margin: 0 1rem;
+            opacity: 0.7;
+        }
+
+        .section-title p {
+            color: var(--royal-blue);
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Program Timeline */
+        .program-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: var(--off-white);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+            position: relative;
+            border: 1px solid rgba(65,105,225,0.2);
+            animation: fadeInLeft 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+        .timeline-item:nth-child(8) { animation-delay: 0.8s; }
+        .timeline-item:nth-child(9) { animation-delay: 0.9s; }
+        .timeline-item:nth-child(10) { animation-delay: 1s; }
+        .timeline-item:nth-child(11) { animation-delay: 1.1s; }
+        .timeline-item:nth-child(12) { animation-delay: 1.2s; }
+        .timeline-item:nth-child(13) { animation-delay: 1.3s; }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px) translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--gold);
+            background: linear-gradient(135deg, var(--white), rgba(255,215,0,0.05));
+        }
+
+        .flag-badge {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            min-width: 70px;
+            justify-content: center;
+            border: 1px solid var(--gold);
+        }
+
+        .flag-badge i {
+            font-size: 0.9rem;
+            color: var(--gold);
+        }
+
+        .flag-gh {
+            background: linear-gradient(135deg, #006B3F, #FCD116, #CE1126);
+            color: var(--royal-blue-dark);
+            border: 1px solid var(--gold);
+        }
+
+        .flag-uk {
+            background: linear-gradient(135deg, #012169, #FFFFFF, #C8102E);
+            color: var(--royal-blue-dark);
+            border: 1px solid var(--gold);
+        }
+
+        .program-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--royal-blue-light), var(--royal-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            border: 2px solid var(--gold);
+        }
+
+        .timeline-item:hover .program-icon {
+            background: var(--gold);
+            color: var(--royal-blue-dark);
+            transform: rotate(360deg);
+            border-color: var(--royal-blue);
+        }
+
+        .program-details {
+            flex: 1;
+        }
+
+        .program-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--royal-blue-dark);
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .program-minister {
+            color: var(--royal-blue);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .program-location {
+            color: var(--royal-blue-light);
+            font-size: 0.85rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .program-location i {
+            color: var(--gold);
+            font-size: 0.7rem;
+        }
+
+        /* Special Items */
+        .timeline-item.special {
+            background: linear-gradient(135deg, rgba(65,105,225,0.05), rgba(255,215,0,0.05));
+            border-left-color: var(--royal-blue);
+        }
+
+        .timeline-item.highlight {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(65,105,225,0.05));
+            border: 2px solid var(--gold);
+            border-left-color: var(--royal-blue);
+        }
+
+        /* Couple Info Section */
+        .couple-info {
+            display: grid;
+            grid-template-columns: 1fr 0.5fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 4rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(65,105,225,0.05), rgba(255,215,0,0.05));
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+        }
+
+        .couple-info::before {
+            content: '♡';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            color: rgba(65,105,225,0.1);
+            font-family: serif;
+        }
+
+        .person {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .person-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--royal-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.5rem;
+            color: var(--gold);
+            border: 3px solid var(--gold);
+            box-shadow: var(--shadow-md);
+        }
+
+        .person-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--royal-blue-dark);
+        }
+
+        .person-role {
+            color: var(--royal-blue);
+            font-weight: 600;
+        }
+
+        .union-symbol {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 2;
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--royal-blue), var(--royal-blue-dark));
+            border-radius: 50px;
+            border: 2px solid var(--gold);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Blessings Section */
+        .blessings-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50px;
+            color: var(--royal-blue-dark);
+            text-align: center;
+            border: 2px solid var(--royal-blue);
+        }
+
+        .blessings-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--royal-blue-dark);
+        }
+
+        .pastors-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pastor-item {
+            background: var(--royal-blue);
+            color: var(--gold);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            border: 2px solid var(--white);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--royal-blue-dark);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--gold);
+        }
+
+        .footer::before {
+            content: '♡';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(255,215,0,0.1);
+            transform: rotate(15deg);
+        }
+
+        .footer h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .hashtags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .hashtags span {
+            background: rgba(255,255,255,0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid var(--gold);
+            transition: var(--transition);
+            color: var(--white);
+        }
+
+        .hashtags span:hover {
+            background: var(--gold);
+            color: var(--royal-blue-dark);
+            transform: scale(1.05);
+            border-color: var(--white);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2.5rem;
+            }
+            
+            .couple-names span {
+                font-size: 2rem;
+                margin: 0.5rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .program-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .couple-info {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats-section {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .pastors-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section-title h2::before,
+            .section-title h2::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .content {
+                padding: 2rem 1rem;
+            }
+            
+            .couple-names {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Gold Hearts -->
+    <div class="hearts-container" id="hearts"></div>
+
+    <div class="container">
+        <div class="wedding-card">
+            <!-- Header Section -->
+            <div class="header">
+                <div class="flower-decoration"><i class="fas fa-ring" style="color: var(--gold);"></i></div>
+                <div class="flower-decoration-right"><i class="fas fa-ring" style="color: var(--gold);"></i></div>
+                
+                <div class="couple-names">
+                    Frederick <span>♡</span> Naana
+                </div>
+                <div class="wedding-subtitle">
+                    Duodu Asare & Yeboawa Acquaye
+                </div>
+                <div class="date-badge">
+                    <i class="fas fa-calendar-alt"></i> March 14, 2026 <i class="fas fa-calendar-alt"></i>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="content">
+                <div class="section-title">
+                    <h2>Order of Service</h2>
+                    <p>Celebrating the union of two hearts</p>
+                </div>
+
+                <div class="program-timeline">
+                    <!-- Program Items -->
+                    <div class="timeline-item special">
+                        <div class="program-icon"><i class="fas fa-users"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Arrival of Families
+                                <span class="flag-badge flag-gh"><i class="fas fa-globe-africa"></i> GH</span>
+                            </div>
+                            <div class="program-minister">Both Families</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Processional
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="program-icon"><i class="fas fa-microphone"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Introductory Speech by MC
+                                <span class="flag-badge flag-gh"><i class="fas fa-globe-africa"></i> GH</span>
+                            </div>
+                            <div class="program-minister">Rev. Hannah Aba Yawson</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Master of Ceremonies
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="program-icon"><i class="fas fa-pray"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Opening Prayer
+                                <span class="flag-badge flag-gh"><i class="fas fa-globe-africa"></i> GH</span>
+                            </div>
+                            <div class="program-minister">Rev. Jonathan Asare</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Invocation
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="program-icon"><i class="fas fa-handshake"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Introduction of Both Families
+                                <span class="flag-badge flag-gh"><i class="fas fa-globe-africa"></i> GH</span>
+                            </div>
+                            <div class="program-minister">Family Representatives</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Family Presentations
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item highlight">
+                        <div class="program-icon"><i class="fas fa-male"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Entry of Groom
+                                <span class="flag-badge flag-uk"><i class="fas fa-globe-europe"></i> UK</span>
+                            </div>
+                            <div class="program-minister">Frederick Duodu Asare</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Processional
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item highlight">
+                        <div class="program-icon"><i class="fas fa-female"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Entry of Bride
+                                <span class="flag-badge flag-uk"><i class="fas fa-globe-europe"></i> UK</span>
+                            </div>
+                            <div class="program-minister">Naana Yeboawa Acquaye</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Here Comes the Bride
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item special">
+                        <div class="program-icon"><i class="fas fa-coins"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Presentation and Acceptance of Bride Price
+                                <span class="flag-badge flag-gh"><i class="fas fa-globe-africa"></i> GH</span>
+                            </div>
+                            <div class="program-minister">Family Elders</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Traditional Rites
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item highlight">
+                        <div class="program-icon"><i class="fas fa-ring"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Exchange of Rings & Presentation of Bible
+                                <span class="flag-badge flag-uk"><i class="fas fa-globe-europe"></i> UK</span>
+                            </div>
+                            <div class="program-minister">Frederick & Naana</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Vows and Covenant
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="program-icon"><i class="fas fa-hands-praying"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Blessings by Pastors
+                            </div>
+                            <div class="program-minister">Rev. James Ennin & Rev. Isaac Yawson</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Pastoral Blessings
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="program-icon"><i class="fas fa-heart"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Advice for Couple
+                            </div>
+                            <div class="program-minister">Elders & Pastors</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Words of Wisdom
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="program-icon"><i class="fas fa-praying-hands"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Closing Prayer
+                                <span class="flag-badge flag-gh"><i class="fas fa-globe-africa"></i> GH</span>
+                            </div>
+                            <div class="program-minister">Pastor Peter Annor</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Benediction
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item special highlight">
+                        <div class="program-icon"><i class="fas fa-champagne-glasses"></i></div>
+                        <div class="program-details">
+                            <div class="program-title">
+                                Celebration and Refreshment
+                                <span class="flag-badge" style="background: var(--gold); color: var(--royal-blue-dark);"><i class="fas fa-glass-cheers"></i> 🥂</span>
+                            </div>
+                            <div class="program-minister">All Guests</div>
+                            <div class="program-location">
+                                <i class="fas fa-circle"></i> Reception & Fellowship
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Couple Info -->
+                <div class="couple-info">
+                    <div class="person">
+                        <div class="person-icon"><i class="fas fa-male"></i></div>
+                        <div class="person-name">Frederick</div>
+                        <div class="person-role">Duodu Asare</div>
+                    </div>
+                    <div class="union-symbol">♡</div>
+                    <div class="person">
+                        <div class="person-icon"><i class="fas fa-female"></i></div>
+                        <div class="person-name">Naana</div>
+                        <div class="person-role">Yeboawa Acquaye</div>
+                    </div>
+                </div>
+
+                <!-- Blessings Section -->
+                <div class="blessings-section">
+                    <div class="blessings-title">May Your Union Be Blessed</div>
+                    <div class="pastors-list">
+                        <span class="pastor-item">Rev. James Ennin</span>
+                        <span class="pastor-item">Rev. Isaac Yawson</span>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <div class="stat-number">13</div>
+                        <div class="stat-label">Program Segments</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Nations United</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">♡</div>
+                        <div class="stat-label">One Love</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <h3>Frederick ♡ Naana</h3>
+                <p>March 14, 2026</p>
+                
+                <div class="hashtags">
+                    <span>#AsareAcquayeUnion</span>
+                    <span>#LoveWithoutBorders</span>
+                    <span>#GHtoUK</span>
+                    <span>#RoyalBlueAndGold</span>
+                </div>
+
+                <div class="copyright">
+                    <i class="far fa-copyright"></i> 2026 Asare-Acquaye Wedding. All rights reserved.
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Developed by Jay Tech Solutions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Floating Hearts Generation
+        const heartsContainer = document.getElementById('hearts');
+        for (let i = 0; i < 30; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '♡';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 15 + 's';
+            heart.style.animationDuration = 15 + Math.random() * 20 + 's';
+            heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+            heartsContainer.appendChild(heart);
+        }
+
+        // Interactive timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+
+        // Add smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Count up animation for stats (when in view)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
